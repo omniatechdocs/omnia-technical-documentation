@@ -1,12 +1,28 @@
-media: media
+
+media:
+  input: docs/images
+  output: images
 
 content:
   - name: pages
-    label: Pages
+    label: Documentation
     type: collection
     path: docs
+    exclude:
+      - images/**
+    filename: "{primary}.md"
     fields:
       - name: title
+        label: Page title
         type: string
+
+      - name: description
+        label: Description
+        type: text
+
       - name: body
+        label: Content
         type: rich-text
+        options:
+          format: markdown
+          media: true
